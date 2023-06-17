@@ -1,5 +1,5 @@
+// link del video https://youtu.be/cATnnQfPxGA
 PImage Arte;
-boolean act;
 void setup(){
   size(800,400);
   background(199,0,0);
@@ -8,15 +8,20 @@ void setup(){
   ellipseMode(CENTER);
   rectMode(CENTER);
   noStroke();
-  par = 1;
+  par = 1; centX = 3; centY = 3;
 }
 void draw(){
-println(mouseX,mouseY);
 background(199,0,0);
 image(Arte,0,0,400,400);
 Arte();
 Arte2();
-moverArte();
-println(par);
-println(centX,centY);
+if(mover() == true){
+moverArte();}
+
+}
+void keyPressed(){
+if(key == 'r' || key == 'R'){
+ par = 1;
+ centX = 3;
+ centY = 3;}
 }
