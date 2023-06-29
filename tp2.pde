@@ -6,7 +6,6 @@ void setup(){
   Arte = loadImage("data/arte.jpg");
   image(Arte,0,0,400,400);
   ellipseMode(CENTER);
-  rectMode(CENTER);
   noStroke();
   par = 1; centX = 3; centY = 3;
 }
