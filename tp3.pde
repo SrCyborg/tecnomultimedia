@@ -12,8 +12,6 @@ Cargando();
 void draw(){
   if(frameCount % 60 == 0){
   if(Seg < 6){Seg++;}}
-  println(Seg);
-  println(mouseX,mouseY);
   Winxp(Seg, 5);
   pantalla(Seg);
 }
