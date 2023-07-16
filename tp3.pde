@@ -45,13 +45,31 @@ if((mouseX > 260 && mouseX < 340) && (mouseY > 495 && mouseY < 530)){
   pag = 12;
 }
  }
+ if(pag == 11){
+  if(dist(mouseX,mouseY,485,370) < 40){
+  imag[12] = loadImage("data/imag12d.jpg");
+  text[12] = loadStrings("data/texto(12)d.txt");
+  pag = 12;
+  }
+ }
+ if(pag == 7){
+  if(dist(mouseX,mouseY,340,350) < 40){
+  imag[11] = loadImage("data/imag11f.jpg");
+  imag[12] = loadImage("data/imag12f.jpg");
+  text[11] = loadStrings("data/texto(11)f.txt");
+  text[12] = loadStrings("data/texto(12)f.txt");
+  pag = 11;
+  }
+ }
 //Boton Final 
  if(pag == 12){
    if(dist(mouseX,mouseY, 30,25) < 40){
    textSize(20); Seg = 6; pag = 0;
    imag[3] = loadImage("data/imag3.jpg");
    text[3] = loadStrings("data/texto(3).txt");
+   imag[11] = loadImage("data/imag11.jpg");
    imag[12] = loadImage("data/imag12.jpg");
+   text[11] = loadStrings("data/texto(11).txt");
    text[12] = loadStrings("data/texto(12).txt");
    alt = ("");  
 }

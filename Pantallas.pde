@@ -17,7 +17,10 @@ void pantalla(int pant){
   //Paginas  
   if(pant == 7){
     textSize(16);
-    image(imag[pag],0,0,600,600);   
+    image(imag[pag],0,0,600,600);
+    fill(0,0,0,192);
+    quad(5,435,595,435,595,595,5,595);
+    fill(255,255,0);
   for(int c = 0; c < text[pag].length; c++){
     text(text[pag][c], 15, c * 20 + 455);}
   if(pag != 12){
@@ -40,6 +43,18 @@ void pantalla(int pant){
     if(dist(mouseX,mouseY,70,370) < 40){
     text("Aumentar Recompensa",15, 400);}}
  }
+ if(pag == 11){
+   ellipse(485, 370, 40,40);
+   image(duda,465,350,40,40);
+   if(dist(mouseX,mouseY,485,370) < 40){
+    text("Ir por los niños",430, 400);}
+ }
+ if(pag == 7){
+ ellipse(340, 350, 35,35);
+ image(duda,320,330,35,45);
+ if(dist(mouseX,mouseY,340,330) < 35){
+    text("Recordar quien se deshizo\nde las ratas",290, 360);}
+ }
  //pantalla creditos
  if(pant == 8){
    if(frameCount%60 == 0){sg++;}
@@ -48,17 +63,17 @@ void pantalla(int pant){
    if(fps >= 48){fps = 0;}
    if(fot >= 60/14){fps++; fot = 0;}
   textSize(32);
-  fill(200,200,0);
+  fill(200,150,0);
   text("Cuento: El flautisa de Hammelín\nAutor: Los Hermanos Grimm\nArte: Leonardo AI",50,100); 
    }
- else if(sg == 11){fps = 0;}
+ else if(sg == 10){fps = 0;}
  else if(sg > 10 && sg < 20){fot += 60/frameRate;
  image(DrPlagueDance[fps],0,0,600,600);
   if(fps >= 48){fps = 0;}
   if(fot >= 60/14){fps++; fot = 0;}
- fill(255,255,255); 
+ fill(0,255,0); 
  text("Programador: Ramiro Vargas\nGithub: SrCyborg\nLegajo 91498/3",50,100); 
 }
- else if(sg == 21){textSize(20); Seg = 6; sg = 0;}  
+ else if(sg == 20){textSize(20); Seg = 6; sg = 0;}  
  }
 }
