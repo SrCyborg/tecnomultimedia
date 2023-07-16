@@ -43,7 +43,7 @@ void pantalla(int pant){
     if(dist(mouseX,mouseY,70,370) < 40){
     text("Aumentar Recompensa",15, 400);}}
  }
- if(pag == 11){
+ if(pag == 11 && alt != ("f")){
    ellipse(485, 370, 40,40);
    image(duda,465,350,40,40);
    if(dist(mouseX,mouseY,485,370) < 40){
@@ -52,8 +52,8 @@ void pantalla(int pant){
  if(pag == 7){
  ellipse(340, 350, 35,35);
  image(duda,320,330,35,45);
- if(dist(mouseX,mouseY,340,330) < 35){
-    text("Recordar quien se deshizo\nde las ratas",290, 360);}
+ if(dist(mouseX,mouseY,340,350) < 35){
+    text("Recordar quien se deshizo\nde las ratas",290, 380);}
  }
  //pantalla creditos
  if(pant == 8){
