@@ -1,20 +1,21 @@
 let balaX = 0;let balaY = 0;
 let Disparar = false;
 let DireccionBala; let Velocidad = 4;
+let puntos = 0;
 function Proyectil(){
 if(Disparar){
   if(DireccionBala == "N"){image(proyectil[0], balaX, balaY-26,10,13)
   balaY-= Velocidad;
-  if(balaY < 28){Disparar = false;}}
-  if(DireccionBala == "S"){image(proyectil[2], balaX, balaY+26,10,13)
+  if(balaY < 28){Disparar = false;sound[3].play();}}
+  else if(DireccionBala == "S"){image(proyectil[2], balaX, balaY+26,10,13)
   balaY+= Velocidad;
-  if(balaY > 612){Disparar = false;}}
-  if(DireccionBala == "O"){image(proyectil[3], balaX-26, balaY,13,10)
+  if(balaY > 612){Disparar = false;sound[3].play();}}
+  else if(DireccionBala == "O"){image(proyectil[3], balaX-26, balaY,13,10)
   balaX-= Velocidad;
-  if(balaX < 262){Disparar = false;}}
-  if(DireccionBala == "E"){image(proyectil[1], balaX+26, balaY,13,10)
+  if(balaX < 262){Disparar = false;sound[3].play();}}
+  else if(DireccionBala == "E"){image(proyectil[1], balaX+26, balaY,13,10)
   balaX+= Velocidad;
-  if(balaX > 843){Disparar = false;}}
+  if(balaX > 843){Disparar = false;sound[3].play();}}
 }
 BalaChoco();
 if(!Disparar){
@@ -29,9 +30,17 @@ function BalaChoco(){
     let BalaYChoco = balaY+5 > casillaY+y*48 - 24;
     let BalaYChoco2 = balaY-5 < casillaY+y*48 + 24;
  if(BalaXChoco && BalaYChoco && BalaXChoco2 && BalaYChoco2){
-   if(cuadrilla[x][y] == 1){cuadrilla[x][y] = 0; Disparar = false;}
-   if(cuadrilla[x][y] == 2){Disparar = false;}}
+   if(cuadrilla[x][y] == 1){cuadrilla[x][y] = 0; puntos+=100; Disparar = false;
+   sound[1].play();}
+   else if(cuadrilla[x][y] == 2){Disparar = false;sound[2].play();}}
   }
  }
+ for(let i = 0; i < 3; i++){
+ if(balaX+5 > EneX[0+(i*6)]-20 && balaX-5 < EneX[0+(i*6)]+20){
+   if(balaY+5 > EneY[i]-20 && balaY-5 < EneY[i]+20){
+    if(Estado[i] == "vivo"){
+    Estado[i]= "muerto";
+    puntos+=500; Disparar = false;
+    sound[0].play();}}}}
 
 }
